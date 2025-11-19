@@ -126,6 +126,38 @@ body {
   width: 100%;
 }
 
+.page-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: 6px 2px 10px;
+}
+
+.back-home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--text);
+  text-decoration: none;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(235, 237, 246, 0.94));
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.16s ease-out, box-shadow 0.16s ease-out;
+}
+
+.back-home-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .back-home-btn {
+  background: linear-gradient(145deg, rgba(35, 38, 52, 0.92), rgba(28, 30, 42, 0.96));
+  border-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
 .me-section {
   margin-bottom: 30px;
   padding: 24px 22px;
