@@ -42,10 +42,30 @@ const observer = new IntersectionObserver(
 reveals.forEach(el => observer.observe(el));
 
 // Parallax on iPhone mockup
-const phone = document.getElementById("phoneParallax");
-window.addEventListener("scroll", () => {
-  if (!phone) return;
+let phone;
+let ticking = false;
+
+function updatePhoneParallax() {
+  if (!phone) {
+    phone = document.getElementById("phoneParallax");
+  }
+  if (!phone) {
+    ticking = false;
+    return;
+  }
   const rect = phone.getBoundingClientRect();
-  const offset = (window.innerHeight / 2 - rect.top - rect.height / 2) * 0.04;
-  phone.style.transform = `translateY(${offset}px)`;
+  const rawOffset = (window.innerHeight / 2 - rect.top - rect.height / 2) * 0.02;
+  const clamped = Math.max(-5, Math.min(5, rawOffset));
+  phone.style.transform = `translateY(${clamped}px)`;
+  ticking = false;
+}
+
+window.addEventListener("scroll", () => {
+  if (!phone || ticking) return;
+  window.requestAnimationFrame(updatePhoneParallax);
+  ticking = true;
 });
+
+document.addEventListener("DOMContentLoaded", updatePhoneParallax);
+
+updatePhoneParallax();
