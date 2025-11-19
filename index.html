@@ -18,6 +18,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles/phone.css" />
 </head>
 
 <body>
@@ -95,35 +96,7 @@
 
       <!-- PREMIUM IPHONE 15 PRO MOCKUP -->
       <div class="hero-right">
-        <div class="iphone-frame" id="phoneParallax">
-          <div class="iphone-metal"></div>
-          <div class="iphone-inner">
-            <div class="iphone-notch"></div>
-
-            <!-- Animated gradient backdrop -->
-            <div class="iphone-gradient"></div>
-
-            <!-- Top card -->
-            <div class="iphone-card iphone-card-top">
-              <span class="chip">Explore Atlas · Live on iOS & Android</span>
-              <h3>Smart routes, hidden spots & AI-powered trip planning.</h3>
-              <p>Discover curated experiences, safe paths and local-first routes with one tap.</p>
-            </div>
-
-            <!-- Route card -->
-            <div class="iphone-card iphone-card-middle">
-              <span class="label">Today’s route · Santo Domingo</span>
-              <p class="title">Zona Colonial → Hidden viewpoints → Food crawl</p>
-              <p class="meta">ETA 3h 20m · 5 curated stops · AI-ranked by vibe & safety</p>
-            </div>
-
-            <!-- Bottom pill -->
-            <div class="iphone-bottom-pill">
-              Simulated preview — plug your own GIF when ready
-            </div>
-
-          </div>
-        </div>
+        <div id="phoneMount" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -331,6 +304,7 @@
     </footer>
   </div>
 
+  <script type="module" src="components/PhoneMockup.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
