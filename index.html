@@ -1,95 +1,335 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Josvier Rodríguez — AI Engineer & Founder</title>
+  <meta charset="UTF-8" />
+  <title>Josvier Rodríguez — AI Engineer & Founder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="description" content="AI Engineer, Full-Stack Developer & Founder of Explore Atlas. Building AI systems, predictive models, and high-performance mobile apps." />
+  <!-- SEO -->
+  <meta name="description"
+        content="Josvier Rodríguez — CEO & Lead Engineer at Explore Atlas. AI Engineer, Full-Stack Developer and founder building AI-powered products that actually ship." />
+  <meta name="author" content="Josvier Rodríguez" />
 
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="app.js"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-    <!-- ================= HERO ================= -->
-    <header class="hero">
-        <div class="hero-text">
-            <h1>Josvier Rodríguez</h1>
-            <p class="subtitle">AI Engineer • Full-Stack Developer • Founder of Explore Atlas</p>
-
-            <div class="cta-buttons">
-                <a href="https://apps.apple.com/us/app/explore-tourism/id6748882805" class="btn primary">Download iOS</a>
-                <a href="https://play.google.com/store/apps/details?id=com.explore.miapp" class="btn secondary">Download Android</a>
-            </div>
+  <div class="page">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-mark">
+          <span>J</span>
         </div>
-
-        <div class="mockup-container" id="mockup">
-            <div class="mockup-glass">
-                <img src="assets/iphone-placeholder.png" class="mockup-img" alt="Explore Atlas Preview">
-                <div class="mockup-overlay">Animated Preview<br>GIF Placeholder</div>
-            </div>
+        <div class="logo-text">
+          <strong>JOSVIER RODRÍGUEZ</strong>
+          <span>AI Engineer · Founder · Full-Stack</span>
         </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#ai-systems">AI Systems</a>
+        <a href="#contact">Contact</a>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <div class="theme-thumb" id="themeThumb">☀️</div>
+        </button>
+      </nav>
     </header>
 
-    <!-- ================= ABOUT ================= -->
-    <section class="about">
-        <h2>About Me</h2>
-        <p>
-            AI Engineer, Full-Stack Developer, and Founder of Explore Atlas — an AI-powered tourism platform launched on iOS & Android.  
-            I specialize in predictive models, LLMs, cloud architectures, and mobile development.  
-            I build high-performance systems that combine engineering, design, and intelligence.
+    <!-- HERO -->
+    <section class="hero reveal" id="top">
+      <div class="hero-left">
+        <h1>Building AI-powered products that actually ship.</h1>
+
+        <p class="hero-subtitle">
+          CEO & Lead Engineer at <strong>Explore Atlas</strong> · AI Engineer · Full-Stack & Mobile
         </p>
+
+        <p class="hero-tagline">
+          <span>You’re always in the best position you could possibly be.</span>
+        </p>
+
+        <div class="hero-actions">
+          <a href="https://exploreapphq.com" target="_blank" rel="noreferrer">
+            <button class="btn-3d primary">
+              🚀 Explore Atlas Website
+            </button>
+          </a>
+
+          <a href="#contact">
+            <button class="btn-3d secondary">
+              🤝 Let’s work together
+            </button>
+          </a>
+        </div>
+
+        <div class="store-badges">
+          <a href="https://apps.apple.com/us/app/explore-tourism/id6748882805" target="_blank" rel="noreferrer">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                 alt="Download on the App Store">
+          </a>
+
+          <a href="https://play.google.com/store/apps/details?id=com.explore.miapp&hl=en_US" target="_blank" rel="noreferrer">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                 alt="Get it on Google Play">
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          <span>LLMs · Forecasting · NLP</span>
+          <span>React Native · Expo · Flutter</span>
+          <span>Product & UX · Startup mindset</span>
+        </div>
+      </div>
+
+      <!-- PREMIUM IPHONE 15 PRO MOCKUP -->
+      <div class="hero-right">
+        <div class="iphone-frame" id="phoneParallax">
+          <div class="iphone-metal"></div>
+          <div class="iphone-inner">
+            <div class="iphone-notch"></div>
+
+            <!-- Animated gradient backdrop -->
+            <div class="iphone-gradient"></div>
+
+            <!-- Top card -->
+            <div class="iphone-card iphone-card-top">
+              <span class="chip">Explore Atlas · Live on iOS & Android</span>
+              <h3>Smart routes, hidden spots & AI-powered trip planning.</h3>
+              <p>Discover curated experiences, safe paths and local-first routes with one tap.</p>
+            </div>
+
+            <!-- Route card -->
+            <div class="iphone-card iphone-card-middle">
+              <span class="label">Today’s route · Santo Domingo</span>
+              <p class="title">Zona Colonial → Hidden viewpoints → Food crawl</p>
+              <p class="meta">ETA 3h 20m · 5 curated stops · AI-ranked by vibe & safety</p>
+            </div>
+
+            <!-- Bottom pill -->
+            <div class="iphone-bottom-pill">
+              Simulated preview — plug your own GIF when ready
+            </div>
+
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- ================= PROJECTS ================= -->
-    <section class="projects">
-        <h2>Featured Projects</h2>
+    <!-- ABOUT -->
+    <section class="section reveal" id="about">
+      <div class="section-title"><span>01</span> · About & Experience</div>
 
-        <div class="project-card">
-            <h3>Explore Atlas • Live on iOS & Android</h3>
-            <p>AI-powered tourism app with smart routing, hidden spots, and machine-learning recommendations.</p>
-        </div>
+      <div class="grid-2">
+        <article class="card">
+          <h2>Who I am</h2>
+          <p>
+            I’m a software engineer, AI builder and founder. I lead
+            <strong>Explore Atlas</strong>, an AI-powered tourism platform available on iOS and Android.
+          </p>
+          <p>
+            I design and ship real products: mobile apps, AI systems, forecasting engines and automation
+            tools for health, construction, finance and user-facing apps.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Full-Stack Development</span>
+            <span class="pill">Mobile & UX</span>
+            <span class="pill">AI Engineering</span>
+            <span class="pill">Product Thinking</span>
+          </div>
+        </article>
 
-        <div class="project-card">
-            <h3>Presidential Speech Impact Predictor</h3>
-            <p>AI model predicting emotional + regional reaction to U.S. presidential speeches.</p>
-        </div>
+        <article class="card">
+          <h2>Experience</h2>
 
-        <div class="project-card">
-            <h3>Construction Intelligence Platform</h3>
-            <p>System for material forecasting, spatial optimization, and land-use analysis.</p>
-        </div>
+          <div class="experience-block">
+            <h3>Founder & Lead Engineer · Explore Atlas</h3>
+            <p class="exp-meta">2024 — Present</p>
+            <p class="exp-text">
+              Architected the app, routing engine and AI recommendation layer.
+              Shipped to the App Store and Google Play, managing CI/CD, analytics and roadmap.
+            </p>
+          </div>
 
-        <div class="project-card">
-            <h3>Blood Parameter Forecasting Engine</h3>
-            <p>Hybrid ARIMAX + Neural Network system for biometric prediction.</p>
-        </div>
-
-        <div class="project-card">
-            <h3>Intelligent Billing System</h3>
-            <p>Automation system for finance, invoicing, and analytics.</p>
-        </div>
+          <div class="experience-block">
+            <h3>Independent AI Engineer</h3>
+            <p class="exp-meta">2023 — Present</p>
+            <p class="exp-text">
+              Built ARIMAX forecasting systems, NLP models for speech impact, construction intelligence tools and
+              intelligent billing platforms with anomaly detection & revenue prediction.
+            </p>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- ================= CONTACT ================= -->
-    <section class="contact">
-        <h2>Contact</h2>
-        <p>josvierp@gmail.com</p>
+    <!-- AI SYSTEMS -->
+    <section class="section reveal" id="ai-systems">
+      <div class="section-title"><span>02</span> · AI Systems & Stack</div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h2>AI & Data Systems</h2>
+          <ul class="list">
+            <li>ARIMAX + ML for health and finance time-series forecasting.</li>
+            <li>NLP + sentiment + psycholinguistics for political speech impact in US states.</li>
+            <li>Embeddings + LLM reranking for Explore Atlas trip recommendations.</li>
+            <li>Anomaly detection for billing, fraud and operational metrics.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Technical Stack</h2>
+          <div class="pill-row">
+            <span class="pill">React Native</span>
+            <span class="pill">Expo</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">Node.js</span>
+            <span class="pill">Flutter</span>
+            <span class="pill">Python</span>
+            <span class="pill">Firebase & Firestore</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">Supabase</span>
+            <span class="pill">Cloud Functions</span>
+            <span class="pill">GitHub Actions</span>
+            <span class="pill">Figma</span>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- PROJECTS -->
+    <section class="section reveal" id="projects">
+      <div class="section-title"><span>03</span> · Selected Projects</div>
+
+      <div class="project-grid">
+        <article class="card">
+          <div class="project-tag">Flagship</div>
+          <h2 class="project-title">Explore Atlas — AI Tourism App</h2>
+          <p class="project-text">
+            Cross-platform tourism app with safe routing, embeddings-based recommendations,
+            universal map engine and AI-assisted trip planning.
+          </p>
+          <div class="project-links">
+            <a href="https://apps.apple.com/us/app/explore-tourism/id6748882805" target="_blank">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.explore.miapp&hl=en_US" target="_blank">Google Play</a>
+            <a href="https://exploreapphq.com" target="_blank">Website</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="project-tag">AI · Health</div>
+          <h2 class="project-title">Blood Parameter Forecasting</h2>
+          <p class="project-text">
+            Time-series engine that predicts blood biomarkers combining ARIMAX with ML,
+            designed for early anomaly detection and medical decision support.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="project-tag">NLP · Politics</div>
+          <h2 class="project-title">Presidential Speech Impact Model</h2>
+          <p class="project-text">
+            Estimates which US states will react most to a speech using sentiment,
+            emotional tone, psycholinguistics and historical state behavior.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="project-tag">AI · Construction</div>
+          <h2 class="project-title">Construction Intelligence Platform</h2>
+          <p class="project-text">
+            Space optimization, material estimation, cost & time forecasting and planning dashboards
+            for construction companies.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="project-tag">Fintech</div>
+          <h2 class="project-title">Intelligent Billing & Revenue</h2>
+          <p class="project-text">
+            Automated billing with fraud detection and revenue prediction using anomaly detection
+            and forecasting models.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="project-tag">Web · Dashboards</div>
+          <h2 class="project-title">Multi-Page Web Platforms</h2>
+          <p class="project-text">
+            Web dashboards, admin tools and internal portals with modern JS stacks,
+            responsive design and analytics integration.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section reveal" id="contact">
+      <div class="section-title"><span>04</span> · Contact</div>
+
+      <div class="contact-grid">
+        <article class="card">
+          <h2>Let’s build something</h2>
+          <p>
+            I’m open to collaborations on AI products, mobile apps and data platforms.
+            Whether it's a startup, a product idea or a specific role, feel free to reach out.
+          </p>
+
+          <p class="contact-lines">
+            <strong>Email:</strong> <a href="mailto:josvierp@gmail.com">josvierp@gmail.com</a><br>
+            <strong>GitHub:</strong> <a href="https://github.com/JosvierR" target="_blank">github.com/JosvierR</a><br>
+            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/josvier-rodriguez-4b053730a/" target="_blank">
+              linkedin.com/in/josvier-rodriguez-4b053730a
+            </a>
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>Contact form</h2>
+          <!-- FormSubmit = email sin backend -->
+          <form action="https://formsubmit.co/josvierp@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New message from portfolio site" />
+            <input type="hidden" name="_captcha" value="false" />
+
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Who are you?" />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required
+                      placeholder="Tell me about your idea, project or role..."></textarea>
+
+            <button type="submit" class="btn-submit">Send message</button>
+          </form>
+        </article>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer">
-        <p>Certified by:</p>
-        <div class="cert-grid">
-            <img src="assets/huawei.png" alt="Huawei">
-            <img src="assets/harvard.png" alt="Harvard">
-            <img src="assets/jhu.png" alt="Johns Hopkins">
-        </div>
-        <p class="small">© 2025 Josvier Rodríguez — Explore Atlas</p>
+      <div>© <span id="year"></span> Josvier Rodríguez · Built with HTML, CSS & curiosity.</div>
+      <div class="footer-certs">
+        <span class="cert-pill">🎓 PUCMM · B.Sc. Computer Science (in progress)</span>
+        <span class="cert-pill">🏛️ Harvard · CS109xa ML & AI</span>
+        <span class="cert-pill">🧪 Johns Hopkins · Web Dev</span>
+        <span class="cert-pill">🛡️ Huawei ICT · HCIA-Security</span>
+      </div>
     </footer>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
