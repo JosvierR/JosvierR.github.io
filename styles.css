@@ -711,29 +711,58 @@ textarea:focus {
 
 /* Language Selector */
 .lang-selector {
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border-subtle);
-  background: var(--bg-soft);
+  padding: 8px 14px;
+  padding-right: 32px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-subtle);
+  background: var(--bg-elevated);
   color: var(--text);
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="%23666a73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+[data-theme="dark"] .lang-selector {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1.5L6 6.5L11 1.5" stroke="%239b9bb3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 }
 
 .lang-selector:hover {
   border-color: var(--accent);
-  background: var(--bg-card);
+  background: var(--bg-elevated);
+  box-shadow: 0 4px 16px rgba(10, 132, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .lang-selector:hover {
+  box-shadow: 0 6px 20px rgba(10, 132, 255, 0.25);
 }
 
 .lang-selector:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.15), 0 4px 16px rgba(10, 132, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.lang-selector:active {
+  transform: translateY(0);
 }
 
 .lang-selector option {
-  background: var(--bg-card);
+  background: var(--bg-elevated);
   color: var(--text);
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
 }
