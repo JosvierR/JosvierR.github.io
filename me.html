@@ -18,6 +18,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
+  <script src="translations.js"></script>
 </head>
 
 <body>
@@ -30,16 +31,23 @@
         </div>
         <div class="logo-text">
           <strong>JOSVIER RODRÍGUEZ</strong>
-          <span>AI Engineer · Founder · Full-Stack</span>
+          <span data-i18n="header.subtitle">AI Engineer · Founder · Full-Stack</span>
         </div>
       </div>
 
       <nav class="nav">
-        <a href="/me.html">Me</a>
-        <a href="/#about">About</a>
-        <a href="/#projects">Projects</a>
-        <a href="/#ai-systems">AI Systems</a>
-        <a href="/#contact">Contact</a>
+        <a href="/me.html" data-i18n="nav.me">Me</a>
+        <a href="/#about" data-i18n="nav.about">About</a>
+        <a href="/#projects" data-i18n="nav.projects">Projects</a>
+        <a href="/#ai-systems" data-i18n="nav.aiSystems">AI Systems</a>
+        <a href="/#contact" data-i18n="nav.contact">Contact</a>
+
+        <select id="langSelector" class="lang-selector" aria-label="Select language">
+          <option value="en">🇬🇧 EN</option>
+          <option value="es">🇪🇸 ES</option>
+          <option value="fr">🇫🇷 FR</option>
+          <option value="pt">🇵🇹 PT</option>
+        </select>
 
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <div class="theme-thumb" id="themeThumb">☀️</div>
@@ -50,7 +58,7 @@
     <div class="page-actions">
       <a class="back-home-btn" href="/">
         <span>←</span>
-        <span>Back to home</span>
+        <span data-i18n="me.back">Back to home</span>
       </a>
     </div>
 
@@ -59,14 +67,14 @@
       <div class="me-header">
         <div class="me-icon">🌗</div>
         <div>
-          <p class="me-eyebrow">About Myself</p>
-          <h1>Me</h1>
-          <p class="me-subtitle">A disciplined athlete turned builder, learning to translate resilience into code and calm leadership.</p>
+          <p class="me-eyebrow" data-i18n="me.eyebrow">About Myself</p>
+          <h1 data-i18n="me.title">Me</h1>
+          <p class="me-subtitle" data-i18n="me.subtitle">A disciplined athlete turned builder, learning to translate resilience into code and calm leadership.</p>
         </div>
       </div>
 
       <div class="me-story">
-        <p>
+        <p data-i18n="me.p1">
           I was shaped by curiosity, discipline, and the belief that every challenge—big or small—arrives to redirect us toward growth. I didn’t become a builder overnight; it happened through years of asking questions, breaking things, fixing them, and discovering that creation gives me a sense of purpose nothing else does.
         </p>
 
@@ -74,26 +82,26 @@
           I’m the kind of person who genuinely enjoys learning, improving systems, simplifying complexity, and turning ideas into products that help people in the real world. I like thinking deeply, observing quietly, and building boldly. Technology became my language, and through it I found a way to express creativity, strategy, logic, and empathy all at once.
         </p>
 
-        <p>
+        <p data-i18n="me.p3">
           My ambitions are bigger than just code. I want to stand on stages one day—TED, conferences, universities—and talk about resilience, clarity, discipline, and the power of iteration. I want to share how embracing mistakes, uncertainty, and curiosity can turn someone into the best version of themselves. Not because I think I’m “there,” but because I’m committed to the journey.
         </p>
 
-        <p>
+        <p data-i18n="me.p4">
           I believe success is not a destination; it’s the repetition of honest effort. It’s waking up every day choosing improvement over comfort, courage over fear, and purpose over noise. I believe in doing things with intention, in staying calm under pressure, in building what matters, and in leading with clarity.
         </p>
 
-        <p>
+        <p data-i18n="me.p5">
           My life philosophy is simple:
         </p>
 
-        <p>
+        <p data-i18n="me.p6">
           Learn deeply.<br />
           Build boldly.<br />
           Stay humble.<br />
           Move with purpose.
         </p>
 
-        <p>
+        <p data-i18n="me.p7">
           And whenever I feel lost, I return to a truth that guides everything I do:
         </p>
 
@@ -101,11 +109,11 @@
           “You’re always in the best position you could possibly be.”
         </p>
 
-        <p>
+        <p data-i18n="me.p9">
           Every moment—good or bad—is a repositioning. A quiet push pushing you toward something better if you’re willing to see it, learn from it, and act.
         </p>
 
-        <p>
+        <p data-i18n="me.p10">
           This is who I am:<br />
           A builder.<br />
           A thinker.<br />
@@ -117,36 +125,37 @@
 
       <div class="me-grid">
         <div class="me-values">
-          <h3>Core values</h3>
+          <h3 data-i18n="me.values.title">Core values</h3>
           <ul>
-            <li>Build products for a global audience, grounded in clarity, usefulness and intention.</li>
-            <li>Learn every day, lead with ethics, and keep decisions transparent.</li>
-            <li>Solve meaningful problems with software, AI, design and critical thinking.</li>
-            <li>Practice humility with ambition — a steady mind, bold execution.</li>
-            <li>Create with purpose, not noise — quality over speed, impact over attention.</li>
-            <li>Believe that discipline is a superpower and consistency compounds.</li>
+            <li data-i18n="me.values.1">Build products for a global audience, grounded in clarity, usefulness and intention.</li>
+            <li data-i18n="me.values.2">Learn every day, lead with ethics, and keep decisions transparent.</li>
+            <li data-i18n="me.values.3">Solve meaningful problems with software, AI, design and critical thinking.</li>
+            <li data-i18n="me.values.4">Practice humility with ambition — a steady mind, bold execution.</li>
+            <li data-i18n="me.values.5">Create with purpose, not noise — quality over speed, impact over attention.</li>
+            <li data-i18n="me.values.6">Believe that discipline is a superpower and consistency compounds.</li>
           </ul>
         </div>
 
         <div class="me-quote">
           <p class="quote-text">“You’re always in the best position you could possibly be.”</p>
-          <p class="quote-subtext">Iteration is the story. Each mistake is a quiet repositioning toward something better—a reminder to move with calm intent.</p>
+          <p class="quote-subtext" data-i18n="me.quote.subtext">Iteration is the story. Each mistake is a quiet repositioning toward something better—a reminder to move with calm intent.</p>
         </div>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div>© <span id="year"></span> Josvier Rodríguez · Built with HTML, CSS & curiosity.</div>
+      <div data-i18n="footer.text">© <span id="year"></span> Josvier Rodríguez · Built with HTML, CSS & curiosity.</div>
       <div class="footer-certs">
-        <span class="cert-pill">🎓 PUCMM · B.Sc. Computer Science (in progress)</span>
-        <span class="cert-pill">🏛️ Harvard · CS109xa ML & AI</span>
-        <span class="cert-pill">🧪 Johns Hopkins · Web Dev</span>
-        <span class="cert-pill">🛡️ Huawei ICT · HCIA-Security</span>
+        <span class="cert-pill" data-i18n="footer.cert.1">🎓 PUCMM · B.Sc. Computer Science (in progress)</span>
+        <span class="cert-pill" data-i18n="footer.cert.2">🏛️ Harvard · CS109xa ML & AI</span>
+        <span class="cert-pill" data-i18n="footer.cert.3">🧪 Johns Hopkins · Web Dev</span>
+        <span class="cert-pill" data-i18n="footer.cert.4">🛡️ Huawei ICT · HCIA-Security</span>
       </div>
     </footer>
   </div>
 
+  <script src="i18n.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

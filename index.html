@@ -19,6 +19,7 @@
 
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="styles/phone.css" />
+  <script src="translations.js"></script>
 </head>
 
 <body>
@@ -31,16 +32,23 @@
         </div>
         <div class="logo-text">
           <strong>JOSVIER RODRÍGUEZ</strong>
-          <span>AI Engineer · Founder · Full-Stack</span>
+          <span data-i18n="header.subtitle">AI Engineer · Founder · Full-Stack</span>
         </div>
       </div>
 
       <nav class="nav">
-        <a href="/me.html">Me</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#ai-systems">AI Systems</a>
-        <a href="#contact">Contact</a>
+        <a href="/me.html" data-i18n="nav.me">Me</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#ai-systems" data-i18n="nav.aiSystems">AI Systems</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+
+        <select id="langSelector" class="lang-selector" aria-label="Select language">
+          <option value="en">🇬🇧 EN</option>
+          <option value="es">🇪🇸 ES</option>
+          <option value="fr">🇫🇷 FR</option>
+          <option value="pt">🇵🇹 PT</option>
+        </select>
 
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
           <div class="theme-thumb" id="themeThumb">☀️</div>
@@ -51,14 +59,14 @@
     <!-- HERO -->
     <section class="hero reveal" id="top">
       <div class="hero-left">
-        <h1>Building AI-powered products that actually ship.</h1>
+        <h1 data-i18n="hero.title">Building AI-powered products that actually ship.</h1>
 
-        <p class="hero-subtitle">
+        <p class="hero-subtitle" data-i18n="hero.subtitle">
           CEO & Lead Engineer at <strong>Explore Atlas</strong> · AI Engineer · Full-Stack & Mobile
         </p>
 
         <p class="hero-tagline">
-          <span>You’re always in the best position you could possibly be.</span>
+          <span data-i18n="hero.tagline">You’re always in the best position you could possibly be.</span>
         </p>
 
         <div class="hero-actions">
@@ -102,43 +110,43 @@
 
     <!-- ABOUT -->
     <section class="section reveal" id="about">
-      <div class="section-title"><span>01</span> · About & Experience</div>
+      <div class="section-title" data-i18n="about.title"><span>01</span> · About & Experience</div>
 
       <div class="grid-2">
         <article class="card">
-          <h2>Who I am</h2>
-          <p>
+          <h2 data-i18n="about.who.title">Who I am</h2>
+          <p data-i18n="about.who.p1">
             I’m a software engineer, AI builder and founder. I lead
             <strong>Explore Atlas</strong>, an AI-powered tourism platform available on iOS and Android.
           </p>
-          <p>
+          <p data-i18n="about.who.p2">
             I design and ship real products: mobile apps, AI systems, forecasting engines and automation
             tools for health, construction, finance and user-facing apps.
           </p>
           <div class="pill-row">
-            <span class="pill">Full-Stack Development</span>
-            <span class="pill">Mobile & UX</span>
-            <span class="pill">AI Engineering</span>
-            <span class="pill">Product Thinking</span>
+            <span class="pill" data-i18n="about.pill.fullstack">Full-Stack Development</span>
+            <span class="pill" data-i18n="about.pill.mobile">Mobile & UX</span>
+            <span class="pill" data-i18n="about.pill.ai">AI Engineering</span>
+            <span class="pill" data-i18n="about.pill.product">Product Thinking</span>
           </div>
         </article>
 
         <article class="card">
-          <h2>Experience</h2>
+          <h2 data-i18n="about.exp.title">Experience</h2>
 
           <div class="experience-block">
-            <h3>Founder & Lead Engineer · Explore Atlas</h3>
-            <p class="exp-meta">2024 — Present</p>
-            <p class="exp-text">
+            <h3 data-i18n="about.exp.1.title">Founder & Lead Engineer · Explore Atlas</h3>
+            <p class="exp-meta" data-i18n="about.exp.1.meta">2024 — Present</p>
+            <p class="exp-text" data-i18n="about.exp.1.text">
               Architected the app, routing engine and AI recommendation layer.
               Shipped to the App Store and Google Play, managing CI/CD, analytics and roadmap.
             </p>
           </div>
 
           <div class="experience-block">
-            <h3>Independent AI Engineer</h3>
-            <p class="exp-meta">2023 — Present</p>
-            <p class="exp-text">
+            <h3 data-i18n="about.exp.2.title">Independent AI Engineer</h3>
+            <p class="exp-meta" data-i18n="about.exp.2.meta">2023 — Present</p>
+            <p class="exp-text" data-i18n="about.exp.2.text">
               Built ARIMAX forecasting systems, NLP models for speech impact, construction intelligence tools and
               intelligent billing platforms with anomaly detection & revenue prediction.
             </p>
@@ -149,21 +157,21 @@
 
     <!-- AI SYSTEMS -->
     <section class="section reveal" id="ai-systems">
-      <div class="section-title"><span>02</span> · AI Systems & Stack</div>
+      <div class="section-title" data-i18n="ai.title"><span>02</span> · AI Systems & Stack</div>
 
       <div class="grid-2">
         <article class="card">
-          <h2>AI & Data Systems</h2>
+          <h2 data-i18n="ai.systems.title">AI & Data Systems</h2>
           <ul class="list">
-            <li>ARIMAX + ML for health and finance time-series forecasting.</li>
-            <li>NLP + sentiment + psycholinguistics for political speech impact in US states.</li>
-            <li>Embeddings + LLM reranking for Explore Atlas trip recommendations.</li>
-            <li>Anomaly detection for billing, fraud and operational metrics.</li>
+            <li data-i18n="ai.systems.1">ARIMAX + ML for health and finance time-series forecasting.</li>
+            <li data-i18n="ai.systems.2">NLP + sentiment + psycholinguistics for political speech impact in US states.</li>
+            <li data-i18n="ai.systems.3">Embeddings + LLM reranking for Explore Atlas trip recommendations.</li>
+            <li data-i18n="ai.systems.4">Anomaly detection for billing, fraud and operational metrics.</li>
           </ul>
         </article>
 
         <article class="card">
-          <h2>Technical Stack</h2>
+          <h2 data-i18n="ai.stack.title">Technical Stack</h2>
           <div class="pill-row">
             <span class="pill">React Native</span>
             <span class="pill">Expo</span>
@@ -184,63 +192,63 @@
 
     <!-- PROJECTS -->
     <section class="section reveal" id="projects">
-      <div class="section-title"><span>03</span> · Selected Projects</div>
+      <div class="section-title" data-i18n="projects.title"><span>03</span> · Selected Projects</div>
 
       <div class="project-grid">
         <article class="card">
-          <div class="project-tag">Flagship</div>
-          <h2 class="project-title">Explore Atlas — AI Tourism App</h2>
-          <p class="project-text">
+          <div class="project-tag" data-i18n="project.1.tag">Flagship</div>
+          <h2 class="project-title" data-i18n="project.1.title">Explore Atlas — AI Tourism App</h2>
+          <p class="project-text" data-i18n="project.1.text">
             Cross-platform tourism app with safe routing, embeddings-based recommendations,
             universal map engine and AI-assisted trip planning.
           </p>
           <div class="project-links">
-            <a href="https://apps.apple.com/us/app/explore-tourism/id6748882805" target="_blank">App Store</a>
-            <a href="https://play.google.com/store/apps/details?id=com.explore.miapp&hl=en_US" target="_blank">Google Play</a>
-            <a href="https://exploreapphq.com" target="_blank">Website</a>
+            <a href="https://apps.apple.com/us/app/explore-tourism/id6748882805" target="_blank" data-i18n="project.1.link.1">App Store</a>
+            <a href="https://play.google.com/store/apps/details\?id=com.explore.miapp&hl=en_US" target="_blank" data-i18n="project.1.link.2">Google Play</a>
+            <a href="https://exploreapphq.com" target="_blank" data-i18n="project.1.link.3">Website</a>
           </div>
         </article>
 
         <article class="card">
-          <div class="project-tag">AI · Health</div>
-          <h2 class="project-title">Blood Parameter Forecasting</h2>
-          <p class="project-text">
+          <div class="project-tag" data-i18n="project.2.tag">AI · Health</div>
+          <h2 class="project-title" data-i18n="project.2.title">Blood Parameter Forecasting</h2>
+          <p class="project-text" data-i18n="project.2.text">
             Time-series engine that predicts blood biomarkers combining ARIMAX with ML,
             designed for early anomaly detection and medical decision support.
           </p>
         </article>
 
         <article class="card">
-          <div class="project-tag">NLP · Politics</div>
-          <h2 class="project-title">Presidential Speech Impact Model</h2>
-          <p class="project-text">
+          <div class="project-tag" data-i18n="project.3.tag">NLP · Politics</div>
+          <h2 class="project-title" data-i18n="project.3.title">Presidential Speech Impact Model</h2>
+          <p class="project-text" data-i18n="project.3.text">
             Estimates which US states will react most to a speech using sentiment,
             emotional tone, psycholinguistics and historical state behavior.
           </p>
         </article>
 
         <article class="card">
-          <div class="project-tag">AI · Construction</div>
-          <h2 class="project-title">Construction Intelligence Platform</h2>
-          <p class="project-text">
+          <div class="project-tag" data-i18n="project.4.tag">AI · Construction</div>
+          <h2 class="project-title" data-i18n="project.4.title">Construction Intelligence Platform</h2>
+          <p class="project-text" data-i18n="project.4.text">
             Space optimization, material estimation, cost & time forecasting and planning dashboards
             for construction companies.
           </p>
         </article>
 
         <article class="card">
-          <div class="project-tag">Fintech</div>
-          <h2 class="project-title">Intelligent Billing & Revenue</h2>
-          <p class="project-text">
+          <div class="project-tag" data-i18n="project.5.tag">Fintech</div>
+          <h2 class="project-title" data-i18n="project.5.title">Intelligent Billing & Revenue</h2>
+          <p class="project-text" data-i18n="project.5.text">
             Automated billing with fraud detection and revenue prediction using anomaly detection
             and forecasting models.
           </p>
         </article>
 
         <article class="card">
-          <div class="project-tag">Web · Dashboards</div>
-          <h2 class="project-title">Multi-Page Web Platforms</h2>
-          <p class="project-text">
+          <div class="project-tag" data-i18n="project.6.tag">Web · Dashboards</div>
+          <h2 class="project-title" data-i18n="project.6.title">Multi-Page Web Platforms</h2>
+          <p class="project-text" data-i18n="project.6.text">
             Web dashboards, admin tools and internal portals with modern JS stacks,
             responsive design and analytics integration.
           </p>
@@ -250,7 +258,7 @@
 
     <!-- CONTACT -->
     <section class="section reveal" id="contact">
-      <div class="section-title"><span>04</span> · Contact</div>
+      <div class="section-title" data-i18n="contact.title"><span>04</span> · Contact</div>
 
       <div class="contact-grid">
         <article class="card">
@@ -261,32 +269,29 @@
           </p>
 
           <p class="contact-lines">
-            <strong>Email:</strong> <a href="mailto:josvierp@gmail.com">josvierp@gmail.com</a><br>
-            <strong>GitHub:</strong> <a href="https://github.com/JosvierR" target="_blank">github.com/JosvierR</a><br>
-            <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/josvier-rodriguez-4b053730a/" target="_blank">
-              linkedin.com/in/josvier-rodriguez-4b053730a
-            </a>
+            <span data-i18n="contact.card1.email"><strong>Email:</strong> <a href="mailto:josvierp@gmail.com">josvierp@gmail.com</a></span><br>
+            <span data-i18n="contact.card1.github"><strong>GitHub:</strong> <a href="https://github.com/JosvierR" target="_blank">github.com/JosvierR</a></span><br>
+            <span data-i18n="contact.card1.linkedin"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/josvier-rodriguez-4b053730a/" target="_blank">linkedin.com/in/josvier-rodriguez-4b053730a</a></span>
           </p>
         </article>
 
         <article class="card">
-          <h2>Contact form</h2>
+          <h2 data-i18n="contact.card2.title">Contact form</h2>
           <!-- FormSubmit = email sin backend -->
           <form action="https://formsubmit.co/josvierp@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="New message from portfolio site" />
             <input type="hidden" name="_captcha" value="false" />
 
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required placeholder="Who are you?" />
+            <label for="name" data-i18n="contact.form.name">Name</label>
+            <input id="name" name="name" type="text" required data-i18n-placeholder="contact.form.name.placeholder" placeholder="Who are you?" />
 
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+            <label for="email" data-i18n="contact.form.email">Email</label>
+            <input id="email" name="email" type="email" required data-i18n-placeholder="contact.form.email.placeholder" placeholder="you@example.com" />
 
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required
-                      placeholder="Tell me about your idea, project or role..."></textarea>
+            <label for="message" data-i18n="contact.form.message">Message</label>
+            <textarea id="message" name="message" required data-i18n-placeholder="contact.form.message.placeholder" placeholder="Tell me about your idea, project or role..."></textarea>
 
-            <button type="submit" class="btn-submit">Send message</button>
+            <button type="submit" class="btn-submit" data-i18n="contact.form.submit">Send message</button>
           </form>
         </article>
       </div>
@@ -294,17 +299,18 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div>© <span id="year"></span> Josvier Rodríguez · Built with HTML, CSS & curiosity.</div>
+      <div data-i18n="footer.text">© <span id="year"></span> Josvier Rodríguez · Built with HTML, CSS & curiosity.</div>
       <div class="footer-certs">
-        <span class="cert-pill">🎓 PUCMM · B.Sc. Computer Science (in progress)</span>
-        <span class="cert-pill">🏛️ Harvard · CS109xa ML & AI</span>
-        <span class="cert-pill">🧪 Johns Hopkins · Web Dev</span>
-        <span class="cert-pill">🛡️ Huawei ICT · HCIA-Security</span>
+        <span class="cert-pill" data-i18n="footer.cert.1">🎓 PUCMM · B.Sc. Computer Science (in progress)</span>
+        <span class="cert-pill" data-i18n="footer.cert.2">🏛️ Harvard · CS109xa ML & AI</span>
+        <span class="cert-pill" data-i18n="footer.cert.3">🧪 Johns Hopkins · Web Dev</span>
+        <span class="cert-pill" data-i18n="footer.cert.4">🛡️ Huawei ICT · HCIA-Security</span>
       </div>
     </footer>
   </div>
 
   <script type="module" src="components/PhoneMockup.js"></script>
+  <script src="i18n.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -1,6 +1,16 @@
 // Year in footer
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Language selector
+const langSelector = document.getElementById("langSelector");
+if (langSelector) {
+  langSelector.addEventListener("change", (e) => {
+    if (typeof i18n !== 'undefined') {
+      i18n.setLanguage(e.target.value);
+    }
+  });
+}
+
 // Theme (Apple-style hybrid: follow system, allow override)
 const root = document.documentElement;
 const thumb = document.getElementById("themeThumb");

@@ -708,3 +708,32 @@ textarea:focus {
     padding-inline: 14px;
   }
 }
+
+/* Language Selector */
+.lang-selector {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-soft);
+  color: var(--text);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.lang-selector:hover {
+  border-color: var(--accent);
+  background: var(--bg-card);
+}
+
+.lang-selector:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(10, 132, 255, 0.1);
+}
+
+.lang-selector option {
+  background: var(--bg-card);
+  color: var(--text);
+}
