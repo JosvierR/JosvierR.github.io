@@ -14,12 +14,12 @@
   background: linear-gradient(150deg, rgba(255, 255, 255, 0.16), rgba(160, 178, 255, 0.22));
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55), 0 40px 140px rgba(0, 0, 0, 0.28);
   overflow: visible;
-  transform: translateY(var(--phone-offset, 0px)) rotateX(0deg) rotateY(0deg);
+  transform: translate3d(0, var(--phone-offset, 0px), 0) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
   transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s ease;
   isolation: isolate;
 }
 
-.hero-right:hover .phone-frame { transform: translateY(calc(var(--phone-offset, 0px) - 6px)) rotateX(-6deg) rotateY(10deg); box-shadow: 0 40px 120px rgba(0,0,0,0.6), 0 60px 160px rgba(99,102,241,0.35); }
+.hero-right:hover .phone-frame { transform: translate3d(0, calc(var(--phone-offset, 0px) - 6px), 0) rotateX(calc(var(--tilt-x, 0deg) - 4deg)) rotateY(calc(var(--tilt-y, 0deg) + 6deg)); box-shadow: 0 40px 120px rgba(0,0,0,0.6), 0 60px 160px rgba(99,102,241,0.35); }
 
 [data-theme="light"] .phone-frame {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(230, 236, 255, 0.92));

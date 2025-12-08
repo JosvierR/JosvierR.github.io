@@ -24,6 +24,7 @@
 </head>
 
 <body>
+  <div class="page-transition" aria-hidden="true"></div>
   <div class="background-effects" aria-hidden="true">
     <div class="aurora aurora-one"></div>
     <div class="aurora aurora-two"></div>
@@ -75,38 +76,38 @@
 
     <main id="top">
       <!-- HERO -->
-      <section class="hero reveal" aria-labelledby="hero-heading">
+      <section class="hero reveal" aria-labelledby="hero-heading" data-animate="section" data-preset="fadeInUp">
         <div class="container hero-grid">
           <div class="hero-left">
-            <div class="status-pill">
+            <div class="status-pill" data-animate-child>
               <span class="dot online" aria-hidden="true"></span>
               <span data-i18n="status.available">Available for AI collaborations · 2025</span>
             </div>
-            <div class="eyebrow" data-i18n="header.subtitle">AI Engineer · Founder · Full-Stack</div>
-            <h1 id="hero-heading" data-i18n="hero.title">Building AI-powered products that actually ship.</h1>
-            <p class="hero-subtitle" data-i18n="hero.subtitle">
+            <div class="eyebrow" data-i18n="header.subtitle" data-animate-child>AI Engineer · Founder · Full-Stack</div>
+            <h1 id="hero-heading" data-i18n="hero.title" data-animate-child>Building AI-powered products that actually ship.</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle" data-animate-child>
               CEO & Lead Engineer at <strong>Explore Atlas</strong> · AI Engineer · Full-Stack & Mobile
             </p>
-            <p class="hero-tagline">
+            <p class="hero-tagline" data-animate-child>
               <span data-i18n="hero.tagline">You’re always in the best position you could possibly be.</span>
             </p>
 
-            <div class="chip-row">
-              <span class="chip">LLMs</span>
-              <span class="chip">Forecasting</span>
-              <span class="chip">NLP</span>
-              <span class="chip">React Native</span>
-              <span class="chip">Expo</span>
-              <span class="chip">Flutter</span>
-              <span class="chip">Product & UX</span>
+            <div class="chip-row" data-animate-child>
+              <span class="chip" data-animate-child>LLMs</span>
+              <span class="chip" data-animate-child>Forecasting</span>
+              <span class="chip" data-animate-child>NLP</span>
+              <span class="chip" data-animate-child>React Native</span>
+              <span class="chip" data-animate-child>Expo</span>
+              <span class="chip" data-animate-child>Flutter</span>
+              <span class="chip" data-animate-child>Product & UX</span>
             </div>
 
-            <div class="hero-actions">
+            <div class="hero-actions" data-animate-child>
               <a class="btn primary" href="https://exploreapphq.com" target="_blank" rel="noreferrer">🚀 Explore Atlas Website</a>
               <a class="btn ghost" href="#contact">🤝 Let’s work together</a>
             </div>
 
-            <div class="trusted-row" aria-label="Trusted by">
+            <div class="trusted-row" aria-label="Trusted by" data-animate-child>
               <span class="trusted-label">Trusted by · Featured in</span>
               <div class="trusted-badges">
                 <span class="badge">Product studios</span>
@@ -115,7 +116,7 @@
               </div>
             </div>
 
-            <div class="store-badges">
+            <div class="store-badges" data-animate-child>
               <a href="https://apps.apple.com/us/app/explore-tourism/id6748882805" target="_blank" rel="noreferrer">
                 <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
                   alt="Download on the App Store">
@@ -126,7 +127,7 @@
               </a>
             </div>
 
-            <div class="hero-meta">
+            <div class="hero-meta" data-animate-child>
               <span>LLMs · Forecasting · NLP</span>
               <span>React Native · Expo · Flutter</span>
               <span>Product & UX · Startup mindset</span>
@@ -143,12 +144,12 @@
       </section>
 
       <!-- ABOUT -->
-      <section class="section reveal" id="about" aria-labelledby="about-title">
+      <section class="section reveal" id="about" aria-labelledby="about-title" data-animate="section">
         <div class="container">
-          <div class="section-title" id="about-title" data-i18n="about.title"><span>01</span> · About & Experience</div>
+          <div class="section-title" id="about-title" data-i18n="about.title" data-animate-child><span>01</span> · About & Experience</div>
 
-          <div class="about-grid">
-            <article class="glass-card depth-card">
+          <div class="about-grid" data-animate-child>
+            <article class="glass-card depth-card" data-animate-child>
               <div class="card-topline">Who I am</div>
               <h2 data-i18n="about.who.title">Who I am</h2>
               <p data-i18n="about.who.p1">
@@ -167,7 +168,7 @@
               </ul>
             </article>
 
-            <article class="glass-card timeline-card">
+            <article class="glass-card timeline-card" data-animate-child>
               <div class="card-topline">Experience</div>
               <h2 data-i18n="about.exp.title">Experience</h2>
 
@@ -202,12 +203,12 @@
       </section>
 
       <!-- AI SYSTEMS -->
-      <section class="section reveal" id="ai-systems" aria-labelledby="ai-title">
+      <section class="section reveal" id="ai-systems" aria-labelledby="ai-title" data-animate="section">
         <div class="container">
-          <div class="section-title" id="ai-title" data-i18n="ai.title"><span>02</span> · AI Systems & Stack</div>
+          <div class="section-title" id="ai-title" data-i18n="ai.title" data-animate-child><span>02</span> · AI Systems & Stack</div>
 
-          <div class="ai-grid">
-            <article class="glass-card ai-card">
+          <div class="ai-grid" data-animate-child>
+            <article class="glass-card ai-card" data-animate-child>
               <div class="card-topline">AI & Data Systems</div>
               <h2 data-i18n="ai.systems.title">AI & Data Systems</h2>
               <div class="ai-feature-grid">
@@ -230,7 +231,7 @@
               </div>
             </article>
 
-            <article class="glass-card stack-card">
+            <article class="glass-card stack-card" data-animate-child>
               <div class="card-topline">Technical Stack</div>
               <h2 data-i18n="ai.stack.title">Technical Stack</h2>
               <div class="tag-wall">
@@ -253,12 +254,12 @@
       </section>
 
       <!-- PROJECTS -->
-      <section class="section reveal" id="projects" aria-labelledby="projects-title">
+      <section class="section reveal" id="projects" aria-labelledby="projects-title" data-animate="section">
         <div class="container">
-          <div class="section-title" id="projects-title" data-i18n="projects.title"><span>03</span> · Selected Projects</div>
+          <div class="section-title" id="projects-title" data-i18n="projects.title" data-animate-child><span>03</span> · Selected Projects</div>
 
-          <div class="project-grid">
-            <article class="project-card flagship">
+          <div class="project-grid" data-animate-child>
+            <article class="project-card flagship" data-animate-child>
               <div class="project-tag" data-i18n="project.1.tag">Flagship</div>
               <h2 class="project-title" data-i18n="project.1.title">Explore Atlas — AI Tourism App</h2>
               <p class="project-text" data-i18n="project.1.text">
@@ -272,7 +273,7 @@
               </div>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-animate-child>
               <div class="project-tag" data-i18n="project.2.tag">AI · Health</div>
               <h2 class="project-title" data-i18n="project.2.title">Blood Parameter Forecasting</h2>
               <p class="project-text" data-i18n="project.2.text">
@@ -281,7 +282,7 @@
               </p>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-animate-child>
               <div class="project-tag" data-i18n="project.3.tag">NLP · Politics</div>
               <h2 class="project-title" data-i18n="project.3.title">Presidential Speech Impact Model</h2>
               <p class="project-text" data-i18n="project.3.text">
@@ -290,7 +291,7 @@
               </p>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-animate-child>
               <div class="project-tag" data-i18n="project.4.tag">AI · Construction</div>
               <h2 class="project-title" data-i18n="project.4.title">Construction Intelligence Platform</h2>
               <p class="project-text" data-i18n="project.4.text">
@@ -299,7 +300,7 @@
               </p>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-animate-child>
               <div class="project-tag" data-i18n="project.5.tag">Fintech</div>
               <h2 class="project-title" data-i18n="project.5.title">Intelligent Billing & Revenue</h2>
               <p class="project-text" data-i18n="project.5.text">
@@ -308,7 +309,7 @@
               </p>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-animate-child>
               <div class="project-tag" data-i18n="project.6.tag">Web · Dashboards</div>
               <h2 class="project-title" data-i18n="project.6.title">Multi-Page Web Platforms</h2>
               <p class="project-text" data-i18n="project.6.text">
@@ -321,12 +322,12 @@
       </section>
 
       <!-- CONTACT -->
-      <section class="section reveal" id="contact" aria-labelledby="contact-title">
+      <section class="section reveal" id="contact" aria-labelledby="contact-title" data-animate="section">
         <div class="container">
-          <div class="section-title" id="contact-title" data-i18n="contact.title"><span>04</span> · Contact</div>
+          <div class="section-title" id="contact-title" data-i18n="contact.title" data-animate-child><span>04</span> · Contact</div>
 
-          <div class="contact-grid">
-            <article class="glass-card contact-card">
+          <div class="contact-grid" data-animate-child>
+            <article class="glass-card contact-card" data-animate-child>
               <div class="card-topline">Connect</div>
               <h2>Let’s build something</h2>
               <p>
@@ -341,7 +342,7 @@
               </div>
             </article>
 
-            <article class="glass-card contact-card">
+            <article class="glass-card contact-card" data-animate-child>
               <div class="card-topline">Message</div>
               <h2 data-i18n="contact.card2.title">Contact form</h2>
               <form action="https://formsubmit.co/josvierp@gmail.com" method="POST">
@@ -403,6 +404,6 @@
 
   <script type="module" src="components/PhoneMockup.js"></script>
   <script src="i18n.js"></script>
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

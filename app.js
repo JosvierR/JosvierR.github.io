@@ -1,3 +1,5 @@
+import { animateChildrenStagger, animateElement, initAnimatedSections, useReducedMotion } from './motionPresets.js';
+
 // Year in footer
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -40,26 +42,37 @@ if (themeToggle) {
   });
 }
 
-// Scroll reveal
-const reveals = document.querySelectorAll(".reveal");
-const observer = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.15 }
-);
-reveals.forEach(el => observer.observe(el));
+// Motion helpers
+let reducedMotion = useReducedMotion();
+const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+reducedMotionQuery.addEventListener('change', () => {
+  reducedMotion = useReducedMotion();
+});
 
-// Parallax on iPhone mockup
+function initHeroAnimations() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  const title = hero.querySelector('h1');
+  const subtitle = hero.querySelector('.hero-subtitle');
+  const tagline = hero.querySelector('.hero-tagline');
+  const chips = hero.querySelectorAll('.chip');
+  const actions = hero.querySelector('.hero-actions');
+
+  animateElement(title, 'fadeInUp');
+  animateElement(subtitle, 'fadeInUp', 80);
+  animateElement(tagline, 'fadeInUp', 140);
+  animateChildrenStagger(actions, '.btn', 'fadeInUp', 200, 80);
+  chips.forEach((chip, index) => animateElement(chip, 'fadeInUp', 120 + index * 70));
+}
+
+// Phone mockup motion
 let phone;
 let ticking = false;
+let tiltTimeout;
 
 function updatePhoneParallax() {
+  if (reducedMotion) return;
   if (!phone) {
     phone = document.getElementById("phoneParallax");
   }
@@ -74,15 +87,34 @@ function updatePhoneParallax() {
   ticking = false;
 }
 
-window.addEventListener("scroll", () => {
-  if (!phone || ticking) return;
-  window.requestAnimationFrame(updatePhoneParallax);
-  ticking = true;
-});
+function initPhoneTilt() {
+  const mount = document.querySelector('.hero-right');
+  phone = document.getElementById('phoneParallax');
+  if (!mount || !phone) return;
+  if (reducedMotion) {
+    phone.style.transform = 'translate3d(0, var(--phone-offset, 0px), 0)';
+    return;
+  }
 
-document.addEventListener("DOMContentLoaded", updatePhoneParallax);
+  const resetTilt = () => {
+    phone.style.setProperty('--tilt-x', '0deg');
+    phone.style.setProperty('--tilt-y', '0deg');
+  };
 
-updatePhoneParallax();
+  mount.addEventListener('mousemove', (e) => {
+    const bounds = mount.getBoundingClientRect();
+    const x = ((e.clientX - bounds.left) / bounds.width) - 0.5;
+    const y = ((e.clientY - bounds.top) / bounds.height) - 0.5;
+    const tiltX = (-y * 8).toFixed(2);
+    const tiltY = (x * 10).toFixed(2);
+    phone.style.setProperty('--tilt-x', `${tiltX}deg`);
+    phone.style.setProperty('--tilt-y', `${tiltY}deg`);
+    clearTimeout(tiltTimeout);
+    tiltTimeout = setTimeout(resetTilt, 1200);
+  });
+
+  mount.addEventListener('mouseleave', resetTilt);
+}
 
 // Header shrink on scroll
 const siteHeader = document.querySelector(".site-header");
@@ -103,13 +135,18 @@ function openPalette() {
   if (!commandPalette) return;
   commandPalette.classList.add("open");
   commandPalette.setAttribute("aria-hidden", "false");
+  animateElement(commandPalette.querySelector('.command-dialog'), 'scaleIn');
+  animateChildrenStagger(commandPalette, '.command-option', 'fadeInUp', 120, 60);
   if (commandInput) commandInput.focus();
 }
 
 function closePaletteUI() {
   if (!commandPalette) return;
-  commandPalette.classList.remove("open");
-  commandPalette.setAttribute("aria-hidden", "true");
+  animateElement(commandPalette.querySelector('.command-dialog'), 'fadeInDown');
+  setTimeout(() => {
+    commandPalette.classList.remove("open");
+    commandPalette.setAttribute("aria-hidden", "true");
+  }, 200);
 }
 
 commandFab?.addEventListener("click", openPalette);
@@ -146,3 +183,72 @@ if (commandInput) {
     });
   });
 }
+
+// Cards hover microinteractions
+function enhanceCards() {
+  const cards = document.querySelectorAll('.glass-card, .project-card, .contact-card');
+  cards.forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--pointer-x', `${x}px`);
+      card.style.setProperty('--pointer-y', `${y}px`);
+    });
+  });
+}
+
+function initPageTransition() {
+  const layer = document.querySelector('.page-transition');
+  if (!layer) return;
+  setTimeout(() => layer.classList.add('animate'), 60);
+}
+
+function initBadgesPulse() {
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach((card) => {
+    const badge = card.querySelector('.project-tag');
+    if (!badge) return;
+    card.addEventListener('mouseenter', () => {
+      animateElement(badge, 'scaleIn');
+    });
+  });
+}
+
+function initContactReveal() {
+  const form = document.querySelector('.contact-card form');
+  if (!form) return;
+  const inputs = form.querySelectorAll('input, textarea, button');
+  animateChildrenStagger(form, 'input, textarea, button', 'fadeInUp', 120, 80);
+}
+
+function initHeroFloat() {
+  phone = document.getElementById("phoneParallax");
+  if (!phone || reducedMotion) return;
+  animateElement(phone, 'floatSlow');
+}
+
+function bootstrapMotion() {
+  initAnimatedSections();
+  initHeroAnimations();
+  initHeroFloat();
+  initPhoneTilt();
+  initBadgesPulse();
+  initContactReveal();
+  initPageTransition();
+}
+
+window.addEventListener("scroll", () => {
+  if (reducedMotion) return;
+  if (!phone || ticking) return;
+  window.requestAnimationFrame(updatePhoneParallax);
+  ticking = true;
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  updatePhoneParallax();
+  bootstrapMotion();
+  enhanceCards();
+});
+
+updatePhoneParallax();
