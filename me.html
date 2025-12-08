@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <title>About Me — Josvier Rodríguez</title>
@@ -23,6 +23,7 @@
 
 <body>
   <div class="page">
+    <div class="background-grid" aria-hidden="true"></div>
     <!-- HEADER -->
     <header class="header">
       <div class="logo">
@@ -36,11 +37,12 @@
       </div>
 
       <nav class="nav">
-        <a href="/me.html" data-i18n="nav.me">Me</a>
-        <a href="/#about" data-i18n="nav.about">About</a>
-        <a href="/#projects" data-i18n="nav.projects">Projects</a>
-        <a href="/#ai-systems" data-i18n="nav.aiSystems">AI Systems</a>
-        <a href="/#contact" data-i18n="nav.contact">Contact</a>
+        <a href="/" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="/me.html" class="nav-link" data-i18n="nav.me">Me</a>
+        <a href="/#about" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="/#ai-systems" class="nav-link" data-i18n="nav.aiSystems">AI Systems</a>
+        <a href="/#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+        <a href="/#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
 
         <select id="langSelector" class="lang-selector" aria-label="Select language">
           <option value="en">🇬🇧 EN</option>
@@ -50,8 +52,10 @@
         </select>
 
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <div class="theme-thumb" id="themeThumb">☀️</div>
+          <div class="theme-thumb" id="themeThumb">🌙</div>
         </button>
+
+        <a class="ghost-button" href="/#contact">Let’s work together</a>
       </nav>
     </header>
 

@@ -2,6 +2,7 @@ const translations = {
   en: {
     // Header
     "header.subtitle": "AI Engineer · Founder · Full-Stack",
+    "nav.home": "Home",
     "nav.me": "Me",
     "nav.about": "About",
     "nav.projects": "Projects",
@@ -128,6 +129,7 @@ const translations = {
   es: {
     // Header
     "header.subtitle": "Ingeniero en IA · Fundador · Full-Stack",
+    "nav.home": "Inicio",
     "nav.me": "Yo",
     "nav.about": "Acerca de",
     "nav.projects": "Proyectos",
@@ -254,6 +256,7 @@ const translations = {
   fr: {
     // Header
     "header.subtitle": "Ingénieur IA · Fondateur · Full-Stack",
+    "nav.home": "Accueil",
     "nav.me": "Moi",
     "nav.about": "À propos",
     "nav.projects": "Projets",
@@ -380,6 +383,7 @@ const translations = {
   pt: {
     // Header
     "header.subtitle": "Engenheiro de IA · Fundador · Full-Stack",
+    "nav.home": "Início",
     "nav.me": "Eu",
     "nav.about": "Sobre",
     "nav.projects": "Projetos",
