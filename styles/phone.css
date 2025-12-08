@@ -2,21 +2,24 @@
   position: relative;
   display: grid;
   place-items: center;
+  transform-style: preserve-3d;
 }
 
 .phone-frame {
   position: relative;
-  width: min(340px, 92vw);
+  width: min(360px, 92vw);
   height: 660px;
   border-radius: 56px;
   padding: 10px;
   background: linear-gradient(150deg, rgba(255, 255, 255, 0.16), rgba(160, 178, 255, 0.22));
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.55), 0 40px 140px rgba(0, 0, 0, 0.28);
   overflow: visible;
-  transform: translateY(0);
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(var(--phone-offset, 0px)) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s ease;
   isolation: isolate;
 }
+
+.hero-right:hover .phone-frame { transform: translateY(calc(var(--phone-offset, 0px) - 6px)) rotateX(-6deg) rotateY(10deg); box-shadow: 0 40px 120px rgba(0,0,0,0.6), 0 60px 160px rgba(99,102,241,0.35); }
 
 [data-theme="light"] .phone-frame {
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(230, 236, 255, 0.92));
@@ -58,9 +61,7 @@
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
-[data-theme="light"] .phone-body {
-  background: linear-gradient(150deg, #0e1328, #111936 55%, #0b1433);
-}
+[data-theme="light"] .phone-body { background: linear-gradient(150deg, #0e1328, #111936 55%, #0b1433); }
 
 .phone-notch {
   position: absolute;
@@ -80,12 +81,7 @@
 }
 
 .phone-notch-speaker,
-.phone-notch-camera {
-  display: inline-block;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-}
-
+.phone-notch-camera { display: inline-block; border-radius: 999px; background: rgba(255, 255, 255, 0.12); }
 .phone-notch-speaker { width: 52px; height: 6px; }
 .phone-notch-camera { width: 10px; height: 10px; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2); }
 
@@ -157,28 +153,9 @@
   border: 1px solid rgba(255, 255, 255, 0.65);
 }
 
-.phone-card.secondary {
-  background: rgba(8, 12, 26, 0.72);
-  color: #f4f6ff;
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
-}
-
+.phone-card.secondary { background: rgba(8, 12, 26, 0.72); color: #f4f6ff; border-color: rgba(255, 255, 255, 0.18); box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35); }
 .phone-card.secondary p { color: rgba(255, 255, 255, 0.9); }
-
-.phone-card .chip {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  font-size: 11px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(99, 102, 241, 0.2);
-  color: #11112a;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-}
-
+.phone-card .chip { display: inline-flex; align-items: center; width: fit-content; font-size: 11px; padding: 4px 10px; border-radius: 999px; background: rgba(99, 102, 241, 0.2); color: #11112a; font-weight: 700; letter-spacing: 0.01em; }
 .phone-card h3 { font-size: 15px; line-height: 1.35; font-weight: 700; }
 .phone-card p { color: rgba(12, 16, 28, 0.74); font-size: 13px; line-height: 1.5; }
 .phone-card.secondary .label { color: rgba(255, 255, 255, 0.75); font-size: 12px; letter-spacing: 0.02em; text-transform: uppercase; }
@@ -209,30 +186,8 @@
   opacity: 0.6;
 }
 
-.phone-indicator {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 4px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.28);
-}
+.phone-indicator { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); width: 120px; height: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.28); }
 
-@keyframes phoneGradientDrift {
-  0% { transform: translate3d(0, -8px, 0) scale(1); }
-  50% { transform: translate3d(4px, 6px, 0) scale(1.02); }
-  100% { transform: translate3d(-4px, 12px, 0) scale(1.01); }
-}
-
-@keyframes orbFloat {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
-}
-
-@keyframes shimmerSweep {
-  0% { transform: translateX(-80%); }
-  50% { transform: translateX(0); }
-  100% { transform: translateX(80%); }
-}
+@keyframes phoneGradientDrift { 0% { transform: translate3d(0, -8px, 0) scale(1); } 50% { transform: translate3d(4px, 6px, 0) scale(1.02); } 100% { transform: translate3d(-4px, 12px, 0) scale(1.01); } }
+@keyframes orbFloat { 0% { transform: translateY(0); } 100% { transform: translateY(-10px); } }
+@keyframes shimmerSweep { 0% { transform: translateX(-80%); } 50% { transform: translateX(0); } 100% { transform: translateX(80%); } }
