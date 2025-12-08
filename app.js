@@ -26,7 +26,7 @@ if (savedTheme) {
 } else {
   const prefersDark = window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
-  applyTheme(prefersDark ? "dark" : "light");
+  applyTheme(prefersDark ? "dark" : "dark");
 }
 
 document.getElementById("themeToggle").addEventListener("click", () => {
