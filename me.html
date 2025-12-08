@@ -14,17 +14,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
+  <link rel="stylesheet" href="styles/design-tokens.css" />
   <link rel="stylesheet" href="styles.css" />
   <script src="translations.js"></script>
 </head>
 
 <body>
+  <div class="background-effects" aria-hidden="true">
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="background-grid"></div>
+    <div class="noise"></div>
+  </div>
   <div class="page">
-    <div class="background-grid" aria-hidden="true"></div>
-    <div class="noise" aria-hidden="true"></div>
     <!-- HEADER -->
     <header class="site-header">
       <div class="container nav-shell">
