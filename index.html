@@ -14,18 +14,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 
+  <link rel="stylesheet" href="styles/design-tokens.css" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="styles/phone.css" />
   <script src="translations.js"></script>
 </head>
 
 <body>
+  <div class="background-effects" aria-hidden="true">
+    <div class="aurora aurora-one"></div>
+    <div class="aurora aurora-two"></div>
+    <div class="background-grid"></div>
+    <div class="noise"></div>
+  </div>
   <div class="page">
-    <div class="background-grid" aria-hidden="true"></div>
-    <div class="noise" aria-hidden="true"></div>
 
     <!-- HEADER -->
     <header class="site-header">
@@ -73,6 +78,10 @@
       <section class="hero reveal" aria-labelledby="hero-heading">
         <div class="container hero-grid">
           <div class="hero-left">
+            <div class="status-pill">
+              <span class="dot online" aria-hidden="true"></span>
+              <span data-i18n="status.available">Available for AI collaborations · 2025</span>
+            </div>
             <div class="eyebrow" data-i18n="header.subtitle">AI Engineer · Founder · Full-Stack</div>
             <h1 id="hero-heading" data-i18n="hero.title">Building AI-powered products that actually ship.</h1>
             <p class="hero-subtitle" data-i18n="hero.subtitle">
@@ -95,6 +104,15 @@
             <div class="hero-actions">
               <a class="btn primary" href="https://exploreapphq.com" target="_blank" rel="noreferrer">🚀 Explore Atlas Website</a>
               <a class="btn ghost" href="#contact">🤝 Let’s work together</a>
+            </div>
+
+            <div class="trusted-row" aria-label="Trusted by">
+              <span class="trusted-label">Trusted by · Featured in</span>
+              <div class="trusted-badges">
+                <span class="badge">Product studios</span>
+                <span class="badge">AI teams</span>
+                <span class="badge">Founders</span>
+              </div>
             </div>
 
             <div class="store-badges">
