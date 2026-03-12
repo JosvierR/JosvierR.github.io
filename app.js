@@ -45,9 +45,14 @@ if (themeToggle) {
 // Motion helpers
 let reducedMotion = useReducedMotion();
 const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-reducedMotionQuery.addEventListener('change', () => {
+const handleReducedMotionChange = () => {
   reducedMotion = useReducedMotion();
-});
+};
+if (typeof reducedMotionQuery.addEventListener === 'function') {
+  reducedMotionQuery.addEventListener('change', handleReducedMotionChange);
+} else if (typeof reducedMotionQuery.addListener === 'function') {
+  reducedMotionQuery.addListener(handleReducedMotionChange);
+}
 
 function initHeroAnimations() {
   const hero = document.querySelector('.hero');
@@ -116,12 +121,17 @@ function initPhoneTilt() {
   mount.addEventListener('mouseleave', resetTilt);
 }
 
-// Header shrink on scroll
-const siteHeader = document.querySelector(".site-header");
-window.addEventListener("scroll", () => {
-  if (!siteHeader) return;
-  siteHeader.classList.toggle("scrolled", window.scrollY > 24);
-});
+// Header + parallax on scroll
+const siteHeader = document.querySelector('.site-header');
+function handleScroll() {
+  if (siteHeader) {
+    siteHeader.classList.toggle('scrolled', window.scrollY > 24);
+  }
+  if (reducedMotion) return;
+  if (!phone || ticking) return;
+  window.requestAnimationFrame(updatePhoneParallax);
+  ticking = true;
+}
 
 // Command palette
 const commandFab = document.getElementById("commandFab");
@@ -238,12 +248,7 @@ function bootstrapMotion() {
   initPageTransition();
 }
 
-window.addEventListener("scroll", () => {
-  if (reducedMotion) return;
-  if (!phone || ticking) return;
-  window.requestAnimationFrame(updatePhoneParallax);
-  ticking = true;
-});
+window.addEventListener('scroll', handleScroll, { passive: true });
 
 document.addEventListener("DOMContentLoaded", () => {
   updatePhoneParallax();
