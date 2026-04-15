@@ -242,7 +242,7 @@ function bootstrapMotion() {
   initAnimatedSections();
   initHeroAnimations();
   initHeroFloat();
-  initPhoneTilt();
+  // initPhoneTilt(); // Disabled to reduce runtime mousemove overhead.
   initBadgesPulse();
   initContactReveal();
   initPageTransition();
@@ -253,7 +253,7 @@ window.addEventListener('scroll', handleScroll, { passive: true });
 document.addEventListener("DOMContentLoaded", () => {
   updatePhoneParallax();
   bootstrapMotion();
-  enhanceCards();
+  // enhanceCards(); // Disabled to reduce runtime pointer tracking overhead.
 });
 
 updatePhoneParallax();
